@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.core import serializers
 from django.shortcuts import render
 from wishlist.models import BarangWishlist
 
@@ -11,3 +13,7 @@ def show_wishlist(request):
         'nama': 'Rafinal Haryokusumo Taloputra'
     }
     return render(request, "wishlist.html", context)
+
+def funct(request):
+    data = BarangWishlist.objects.all()
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
