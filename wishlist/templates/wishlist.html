@@ -14,13 +14,17 @@
 <br>
 <br>
 <h5 class="d-flex justify-content-center">Wishlist:</h5>
-<div class="mt-5 px-5 bg-primary d-flex justify-content-center">
-<table>
+<div class="mt-5 px-5 d-flex justify-content-center">
+<table class="table table-bordered table-dark">
+  <thead>
   <tr>
-    <th>Nama Barang</th>
-    <th>Harga Barang</th>
-    <th>Deskripsi</th>
+    <th scope="col">Nama Barang</th>
+    <th scope="col">Harga Barang</th>
+    <th scope="col">Deskripsi</th>
   </tr>
+  </thead>
+  
+  <tbody>
   {% for barang in list_barang %}
   <tr>
     <th>{{barang.nama_barang}}</th>
@@ -28,6 +32,7 @@
     <th>{{barang.deskripsi}}</th>
   </tr>
   {% endfor %}
+  </tbody>
 </table>
 </div>
 </div>
